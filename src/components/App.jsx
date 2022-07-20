@@ -3,6 +3,7 @@ import {Statistics} from "./Statistics/Statistics"
 import { FeedbackOptions } from "./Feedback/Feedback";
 import { Section } from "./Section/Section";
 import { Notification } from "./Notification/Notification";
+import PropTypes from "prop-types";
 
 export class App extends Component {
   state = {
@@ -11,7 +12,16 @@ export class App extends Component {
   bad: 0
   }
 
-  countTotalFeedback = () => this.state.bad + this.state.good + this.state.neutral 
+  static propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number
+  }
+
+  countTotalFeedback = () =>{
+    const result = Object.values(this.state)
+    return result.reduce((prev, el)  => {return prev + el},0)
+  } ;
   
   countPositiveFeedbackPercentage = () =>{
     const result = this.state.good * 100 / this.countTotalFeedback()
