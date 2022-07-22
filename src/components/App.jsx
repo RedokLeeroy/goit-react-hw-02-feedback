@@ -12,12 +12,6 @@ export class App extends Component {
   bad: 0
   }
 
-  static propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number
-  }
-
   countTotalFeedback = () =>{
     const result = Object.values(this.state)
     return result.reduce((prev, el)  => {return prev + el},0)
