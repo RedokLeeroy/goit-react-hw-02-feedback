@@ -3,7 +3,6 @@ import {Statistics} from "./Statistics/Statistics"
 import { FeedbackOptions } from "./Feedback/Feedback";
 import { Section } from "./Section/Section";
 import { Notification } from "./Notification/Notification";
-import PropTypes from "prop-types";
 
 export class App extends Component {
   state = {

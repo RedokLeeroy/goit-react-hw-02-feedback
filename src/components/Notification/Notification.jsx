@@ -3,6 +3,5 @@
 
       
       Notification.propTypes = {
-          title: PropTypes.string,
-          chilren: PropTypes.node
+          title: PropTypes.string
       }
