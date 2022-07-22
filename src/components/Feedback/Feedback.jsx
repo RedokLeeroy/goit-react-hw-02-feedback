@@ -1,9 +1,6 @@
       import PropTypes from "prop-types";
 
-      export const FeedbackOptions = ({onLeaveFeedback}) =><div>
-        <button name="good" onClick={onLeaveFeedback}>Good</button>
-        <button name="neutral" onClick={onLeaveFeedback}>Neutral</button>
-        <button name="bad" onClick={onLeaveFeedback}>Bad</button>
+      export const FeedbackOptions = ({onLeaveFeedback, options}) =><div > {options.map((el,index)=> <button key={index} name={el} onClick={onLeaveFeedback}>{el}</button>)}
       </div>
 
       FeedbackOptions.propTypes = {
